@@ -33,7 +33,9 @@
 
 
         function Start() {
-            dirX = dirY = posX = posY = 0
+            dirX = dirY = 0;
+            posX = 210;
+            posY = 210;
             var time = setInterval(Update, 100);
             document.addEventListener('keydown', KeyDown);
             document.addEventListener('keyup', KeyUp);
