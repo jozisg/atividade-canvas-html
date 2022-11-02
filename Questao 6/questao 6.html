@@ -1,0 +1,86 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    canvas {
+      border: 1px solid rgb(0, 60, 255)
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas width="500" height="500"></canvas>
+
+
+
+  <script>
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+    var x = 0, y = 0;
+
+    function drawRect(x, y) {
+      ctx.beginPath();
+      ctx.arc(x, y, 20, 20, 50 * Math.PI);
+      ctx.stroke();
+      ctx.fillStyle = "rgb(0, 60, 255)";
+      ctx.fill();
+    }
+
+    var dirX;
+    var dirY;
+    var posX = 230;
+    var posY = 230;
+    var velocity;
+    var time;
+
+
+    function Start() {
+      dirX = dirY = 0;
+      velocity = 50;
+      time = setInterval(Update, 100);
+      document.addEventListener('keydown', KeyDown);
+      document.addEventListener('keyup', KeyUp);
+    }
+
+    function KeyUp() {
+      var tecla = event.key;
+      if (tecla === 'ArrowRight')
+        dirX = 0
+      else if (tecla === 'ArrowLeft')
+        dirX = 0
+      else if (tecla === 'ArrowUp')
+        dirY = 0
+      else if (tecla === 'ArrowDown')
+        dirY = 0
+    }
+    function KeyDown() {
+      var tecla = event.key;
+      if (tecla === 'ArrowRight')
+        dirX = 1
+      else if (tecla === 'ArrowLeft')
+        dirX = -1
+      else if (tecla === 'ArrowUp')
+        dirY = -1
+      else if (tecla === 'ArrowDown')
+        dirY = 1
+    }
+    function Update() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      posX += dirX * velocity;
+      posY += dirY * velocity;
+      drawRect(posX, posY);
+    }
+    window.addEventListener('load', Start)
+
+
+
+
+
+  </script>
+</body>
+
+</html>

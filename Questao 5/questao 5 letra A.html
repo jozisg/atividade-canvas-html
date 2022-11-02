@@ -1,0 +1,52 @@
+<html lang="pt-br">
+<body>
+    <div>
+    <canvas id="canvas" width="450" height="250" style="border:1px solid rgb(0, 60, 255)"></canvas>
+    <canvas id="canvas2" width="200" height="200" style="margin-left: 10px; margin-right: 10px; border-radius: 200px; border:1px solid rgb(0, 60, 255)" ></canvas>
+    <canvas id="canvas3" width="450" height="250" ></canvas>
+   </div>
+     <script>
+
+      //Triangulo dentro de retangulo
+        var canvas = document.getElementById("canvas")
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.fillStyle="rgb(0, 60, 255)";
+
+        ctx.moveTo(190,170);
+        ctx.lineTo(270,170);
+        ctx.lineTo(230,90);
+        ctx.fill();
+       
+        //Quadrado
+        var canvas2 = document.getElementById("canvas2")
+        var ctx2 = canvas2.getContext("2d");
+        ctx2.beginPath();
+        ctx2.fillStyle="rgb(0, 60, 255)";
+        ctx2.rect(40 ,40, 120 ,120);
+        ctx2.stroke();
+        ctx2.fill();
+        
+        //2 triangulo sem fundo
+        var canvas3 = document.getElementById("canvas3")
+        var ctx3 = canvas3.getContext("2d");
+        ctx3.beginPath();
+        ctx3.strokeStyle="rgb(0, 60, 255)";
+        ctx3.moveTo(190,170);
+        ctx3.lineTo(270,170);
+        ctx3.lineTo(230,90);
+        ctx3.closePath();
+        ctx3.stroke();
+        ctx3.beginPath();
+        ctx3.strokeStyle="rgb(0, 60, 255)";
+        ctx3.moveTo(240,170);
+        ctx3.lineTo(320,170);
+        ctx3.lineTo(280,90);
+        ctx3.closePath();
+        ctx3.stroke();
+        
+
+
+     </script>
+</body>
+</html>

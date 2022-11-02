@@ -1,0 +1,31 @@
+<html lang="pt-br">
+
+<body>
+    <canvas width="800" height="600"></canvas>
+
+    <script>
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+
+        for (let x = 0; x < 6; x++) {
+            for (let y = 0; y < 3; y++) {
+                ctx.beginPath();
+                ctx.strokeStyle = "blue";
+                ctx.rect(50 + (60 * x), 40 + (60 * y), 40, 40);
+                ctx.stroke();
+
+                ctx.strokeStyle = "rgb(0, 60, 255)";
+
+                ctx.moveTo(70 + 60 * x, 50 + 60 * y);
+                ctx.lineTo(55 + 60 * x, 70 + 60 * y);
+                ctx.lineTo(85 + 60 * x, 70 + 60 * y);
+                ctx.closePath();
+                ctx.stroke();
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
